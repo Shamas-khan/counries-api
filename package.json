@@ -1,0 +1,25 @@
+{
+  "name": "react-countries-project",
+  "version": "1.0.0",
+  "description": "countries api daata",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "countires",
+    "api",
+    "data"
+  ],
+  "author": "shamas khan",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1"
+  }
+}

@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --background-color: white;
+    --text-color: black;
+    --elements-color: white;
+    margin: 0;
+    font-family: Nunito, sans-serif;
+    
+}
+
+main.dark, header.dark {
+    --background-color: hsl(207, 26%, 17%); 
+    --text-color: white;
+    --elements-color: hsl(209, 23%, 22%);
+}
+
+main {
+    padding: 24px;
+    min-height: calc(100vh - 72px)
+    
+}
+main, header{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration-line: none;
+    color: inherit;
+}
+
+.header-container {
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.1);
+    padding-inline: 24px;
+    background-color: var(--elements-color);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.title {
+    font-weight: 800;
+}
+
+.theme-changer {
+    cursor: pointer;
+}
+
+.countries-container {
+    max-width: 1200px;
+    margin-top: 16px;
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    margin-inline: auto;
+    /* justify-content: space-between; */
+}
+
+.country-card {
+    display: inline-block;
+    width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 24px;
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--elements-color);
+}
+
+.country-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 24px;
+    margin-block: 16px;
+}
+
+.card-text {
+    padding-inline: 16px;
+}
+
+.card-text p {
+    margin-block: 8px;
+}
+
+.country-card img {
+    width: 100%;
+    object-fit:cover;
+}
+
+
+.search-filter-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: 16px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.search-container {
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.15);
+    max-width: 350px;
+    width: 100%;
+    border-radius: 4px;
+    padding-left: 24px;
+    color: #999;
+    overflow: hidden;
+    background-color: var(--elements-color);
+    color: var(--text-color);
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 16px;
+    width: 90%;
+    background-color: inherit;
+    color: inherit;
+}
+
+.search-container input::placeholder {
+    color: #999;
+}
+
+.filter-by-region {
+    width: 250px;
+    padding: 16px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--elements-color);
+    color: var(--text-color);
+}
+
+@media(max-width: 768px) {
+    .countries-container {
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .header-content p {
+        font-size: 12px;
+    }
+
+    .search-filter-container {
+        flex-direction: column;
+    }
+    
+}
+.country-details-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: 32px;
+
+}
+
+.back-button {
+    padding: 6px 24px;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.country-details {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-top: 64px;
+}
+
+.country-details img {
+    width: 40%;
+    border: 1px solid #ddd;
+}
+
+.details-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    column-gap: 64px;
+    max-height: 180px;
+    flex-wrap: wrap;
+}
+
+.details-text p {
+    margin: 0;
+}
+
+.border-countries {
+    margin-top: 48px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.border-countries a {
+    padding: 4px 16px;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+@media(max-width: 940px) {
+    .country-details {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 32px;
+        gap: 16px;
+    }
+
+    .details-text {
+        max-height: unset;
+    }
+
+    .country-details img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
+.languages{
+    width:300px;
+    display:block;
+}
+.cardshimmer{
+   background-color:grey;
+   height:250px;
+   
+}
