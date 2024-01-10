@@ -1,4 +1,4 @@
-# React Country Details API
+# React Country Details
 
 This React application fetches and displays details about different countries using the REST Countries API. It provides a user-friendly interface to explore information about countries, including population, region, capital, and flags.
 
@@ -17,7 +17,7 @@ To get started with the project, follow these steps:
 1. **Clone the Repository:**
     ```bash
     git clone https://github.com/your-username/react-country-details-api.git
-    cd react-country-details-api
+    cd counries-api
     ```
 
 2. **Install Dependencies:**
