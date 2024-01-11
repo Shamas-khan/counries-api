@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import SearchBar from "./SearchBar";
 import SelectMenu from "./SelectMenu";
 import CountriesList from "./CountriesList";
+import useTheme from "../hooks/useTheme";
 
-import useTheme from "../hooks/usetheme";
+
 
 const Home = () => {
     const [query, setquery] = useState("");
