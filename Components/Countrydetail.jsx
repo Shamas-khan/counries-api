@@ -14,16 +14,16 @@ const Countrydetail = () => {
   function updateCountryData(data){
     setCountryData({
       name: data.name.common,
-      nativeName: Object.values(data.name.nativeName)[0].common,
+      nativeName: Object.values(data.name.nativeName || {})[0]?.common,
       population: data.population,
       region: data.region,
       subRegion: data.subregion,
       capital: data.capital,
       tld: data.tld,
-      currencies: Object.values(data.currencies)
-        .map((currency) => currency.name)
+      currencies: Object.values(data.currencies || {} )
+        .map((currency) => currency.name )
         .join(", "),
-      languages: Object.values(data.languages).join(", "),
+      languages: Object.values(data.languages || {}).join(", "),
       flag: data.flags.svg,
       borders: [],
     });

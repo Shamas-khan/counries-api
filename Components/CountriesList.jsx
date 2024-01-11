@@ -38,6 +38,9 @@ const CountriesList = ({ query }) => {
   const filteredCountries = countriesData.filter((country) =>
     country.name.common.toLowerCase().includes(query.toLowerCase())
   );
+  const regionCountries = countriesData.filter((country) =>
+  country.region.toLowerCase().includes(query.toLowerCase())
+);
 
   return (
     <>
