@@ -1,6 +1,6 @@
 import React from "react";
 
-import useTheme from "../hooks/usetheme";
+import useTheme from "../hooks/useTheme";
 
 const Header = () => {
   const [isDark, isNotDark] = useTheme()

@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import { Link, useParams , useNavigate, useLocation} from "react-router-dom";
-import useTheme from "../hooks/usetheme";
+import useTheme from "../hooks/useTheme";
 
 const Countrydetail = () => {
   const navigate = useNavigate();
