@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Link, useParams , useNavigate, useLocation} from "react-router-dom";
-import { ThemeContext } from "../contexts/ThemeContext";
+import useTheme from "../hooks/usetheme";
 
 const Countrydetail = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Countrydetail = () => {
   const countryName = params.country;
   const [countryData, setCountryData] = useState(null);
   const [notFound, setNotFound] = useState(false)
-  const [isDark, isNotDark] = useContext(ThemeContext)
+  const [isDark] = useTheme()
 
   function updateCountryData(data){
     setCountryData({

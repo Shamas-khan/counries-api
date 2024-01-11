@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import SearchBar from "./SearchBar";
 import SelectMenu from "./SelectMenu";
 import CountriesList from "./CountriesList";
-import { ThemeContext } from "../contexts/ThemeContext";
+
+import useTheme from "../hooks/usetheme";
 
 const Home = () => {
     const [query, setquery] = useState("");
-  const [isDark, isNotDark] = useContext(ThemeContext)
+  const[isDark] = useTheme()
   return (
     <>
        <main className={`${isDark && 'dark'}`}>
