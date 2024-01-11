@@ -1,73 +1,46 @@
-import React, { useEffect, useState } from "react";
-import CountryCard from "./CountryCard";
-import CountryListShimmer from "./CountryListShimmer";
+import React, { useEffect, useState } from 'react'
 
-const CountriesList = ({ query }) => {
-  const [countriesData, setCountriesData] = useState([]);
-  const [loading, setLoading] = useState(true);
+import CountryCard from './CountryCard'
+import CountryListShimmer from './CountryListShimmer'
+
+export default function CountriesList({ query }) {
+  const [countriesData, setCountriesData] = useState([])
+
+ 
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
+    fetch('https://restcountries.com/v3.1/all')
+      .then((res) => res.json())
+      .then((data) => {
+        setCountriesData(data)
+      })
+  }, [])
 
-      try {
-        const cachedData = sessionStorage.getItem("countriesData");
-
-        if (cachedData) {
-          setCountriesData(JSON.parse(cachedData));
-          setLoading(false);
-        } else {
-          const response = await fetch('https://restcountries.com/v3.1/all');
-          const data = await response.json();
-
-          setCountriesData(data);
-          setLoading(false);
-
-         
-          sessionStorage.setItem("countriesData", JSON.stringify(data));
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const filteredCountries = countriesData.filter((country) =>
-    country.name.common.toLowerCase().includes(query.toLowerCase())
-  );
-  const regionCountries = countriesData.filter((country) =>
-  country.region.toLowerCase().includes(query.toLowerCase())
-);
+  if (!countriesData.length) {
+    return <CountryListShimmer />
+  }
 
   return (
     <>
-      {loading ? 
-          <CountryListShimmer />
-       : (
-        <div className="countries-container">
-          {filteredCountries.length > 0 ? (
-            filteredCountries.map((country) => (
+      <div className="countries-container">
+        {countriesData
+          .filter((country) =>
+            country.name.common.toLowerCase().includes(query) || country.region.toLowerCase().includes(query)
+          )
+          .map((country) => {
+            return (
               <CountryCard
                 key={country.name.common}
-                countryName={country.name.common}
+                name={country.name.common}
+                flag={country.flags.svg}
                 population={country.population}
                 region={country.region}
-                capital={country.capital}
-                flag={country.flags.svg}
-                imgalt={country.flags.alt}
+                capital={country.capital?.[0]}
                 data={country}
               />
-            ))
-          ) : (
-            <p>Country not found</p>
-          )}
-        </div>
-      )}
+            )
+          })}
+      </div>
     </>
-  );
-};
-
-export default CountriesList;
+  )
+}

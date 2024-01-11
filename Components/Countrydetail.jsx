@@ -4,7 +4,7 @@ import useTheme from "../hooks/useTheme";
 
 const Countrydetail = () => {
   const navigate = useNavigate();
-  const params = useParams();
+  const params = useParams();``
   const {state} = useLocation();
   const countryName = params.country;
   const [countryData, setCountryData] = useState(null);
