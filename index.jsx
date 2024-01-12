@@ -18,13 +18,10 @@ const router = createBrowserRouter([
         
         
         {
-          path: "/:country",
+          path: "country/:country",
           element: <Countrydetail/>,
         },
-        {
-          path: "*",
-          element: <Home />,
-        },
+        
       ],
     },
   

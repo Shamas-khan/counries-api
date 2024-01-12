@@ -10,7 +10,7 @@ export default function CountryCard({
   data,
 }) {
   return (
-    <Link className="country-card" to={`/${name}`} state={data}>
+    <Link className="country-card" to={`country/${name}`} state={data}>
       <div className='flag-container'>
         <img src={flag} alt={name + ' Flag'} />
       </div>
