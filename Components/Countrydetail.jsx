@@ -124,7 +124,7 @@ export default function CountryDetail() {
                 <div className="border-countries">
                   <b>Border Countries: </b>&nbsp;
                   {countryData.borders.map((border) => (
-                    <Link key={border} to={`country/${border}`}>
+                    <Link key={border} to={`/${border}`}>
                       {border}
                     </Link>
                   ))}
